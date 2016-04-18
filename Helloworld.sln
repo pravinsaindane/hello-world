@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloworldLib", "Helloworld
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldConsole", "HelloWorldConsole\HelloWorldConsole.csproj", "{68B95A15-8371-4798-8315-121DC5BAD496}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloworldTest", "HelloworldTest\HelloworldTest.csproj", "{4437A765-8CB6-4F70-AB8E-EC1F9049B541}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,16 @@ Global
 		{68B95A15-8371-4798-8315-121DC5BAD496}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{68B95A15-8371-4798-8315-121DC5BAD496}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{68B95A15-8371-4798-8315-121DC5BAD496}.Release|x86.ActiveCfg = Release|Any CPU
+		{4437A765-8CB6-4F70-AB8E-EC1F9049B541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4437A765-8CB6-4F70-AB8E-EC1F9049B541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4437A765-8CB6-4F70-AB8E-EC1F9049B541}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4437A765-8CB6-4F70-AB8E-EC1F9049B541}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4437A765-8CB6-4F70-AB8E-EC1F9049B541}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4437A765-8CB6-4F70-AB8E-EC1F9049B541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4437A765-8CB6-4F70-AB8E-EC1F9049B541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4437A765-8CB6-4F70-AB8E-EC1F9049B541}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4437A765-8CB6-4F70-AB8E-EC1F9049B541}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{4437A765-8CB6-4F70-AB8E-EC1F9049B541}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
