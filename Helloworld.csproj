@@ -1,32 +1,75 @@
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
   <PropertyGroup>
-    <AssemblyName>HelloWorldMSBuildSample</AssemblyName>
+    <AssemblyName>Helloworld</AssemblyName>
     <OutputPath>Bin\</OutputPath>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <ProjectGuid>{66445236-F2B0-4896-A7F2-ACA8B5BC2E81}</ProjectGuid>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Hello.cs" />
   </ItemGroup>
-    <Target Name="Build" Inputs="@(Compile)" Outputs="$(OutputPath)$(AssemblyName).exe">
-      <MakeDir Directories="$(OutputPath)" Condition="!Exists('$(OutputPath)')" />
-      <Csc Sources="@(Compile)" OutputAssembly="$(OutputPath)$(AssemblyName).exe">
-	    <Output
-                TaskParameter = "OutputAssembly"
-                ItemName = "EXEFile" />
-	  </Csc>
-	  <!-- Log the file name of the output file -->
-      <Message Text="The output file is @(EXEFile)"/>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Target Name="Build" Inputs="@(Compile)" Outputs="$(OutputPath)$(AssemblyName).exe">
+    <MakeDir Directories="$(OutputPath)" Condition="!Exists('$(OutputPath)')" />
+    <Csc Sources="@(Compile)" OutputAssembly="$(OutputPath)$(AssemblyName).exe">
+      <Output TaskParameter="OutputAssembly" ItemName="EXEFile" />
+    </Csc>
+    <!-- Log the file name of the output file -->
+    <Message Text="The output file is @(EXEFile)" />
   </Target>
-  <Target Name="Clean" >
+  <Target Name="Clean">
     <Delete Files="$(OutputPath)$(AssemblyName).exe" ContinueOnError="WarnAndContinue" />
   </Target>
   <Target Name="Rebuild" DependsOnTargets="Clean;Build" />
-  <Target Name="CheckBeforeAfter" 
-    AfterTargets="Clean" BeforeTargets="Build">
+  <Target Name="CheckBeforeAfter" AfterTargets="Clean" BeforeTargets="Build">
     <Message Text="Optimizing" />
-</Target>
+  </Target>
   <Target Name="HelloWorld">
-	<Message Text="Hello $(AssemblyName) : $(Configuration) : $(MSBuildToolsPath)"></Message>
-	<Message Text="World!!!"></Message>
-	<Message Text="Compile item type contains @(Compile)" />
-</Target>
+    <Message Text="Hello $(AssemblyName) : $(Configuration) : $(MSBuildToolsPath)">
+    </Message>
+    <Message Text="World!!!">
+    </Message>
+    <Message Text="Compile item type contains @(Compile)" />
+  </Target>
 </Project>
